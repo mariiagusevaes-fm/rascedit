@@ -57,7 +57,15 @@
     .cta-block{background:linear-gradient(135deg,var(--blue) 0%,var(--a2) 100%);border-radius:var(--rl);padding:32px;text-align:center;color:#fff;margin:40px 0}
     .cta-block h3{color:#fff;margin-bottom:10px}
     .btn-white{background:#fff;color:var(--ink2);border:none;border-radius:var(--rsm);padding:14px 28px;font-weight:800;font-size:15px;cursor:pointer;text-decoration:none;display:inline-block;margin-top:8px}
-    .site-footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:36px 24px;font-size:13px;text-align:center}
+    .site-footer{background:var(--ink);color:rgba(255,255,255,0.7);padding:44px 24px 22px}
+    .ft-grid{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr 1fr 1fr;gap:28px;text-align:left}
+    .ft-logo{font-family:'Source Serif Pro',serif;font-size:18px;font-weight:700;color:#fff}
+    .ft-about{font-size:13px;color:rgba(255,255,255,0.6);margin-top:10px;line-height:1.7}
+    .ft-col h5{color:#fff;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px}
+    .ft-col div{font-size:13px;color:rgba(255,255,255,0.6);margin-bottom:7px}
+    .ft-col a{color:rgba(255,255,255,0.75);text-decoration:none}
+    .ft-bottom{max-width:1100px;margin:28px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.4);text-align:center}
+    @media(max-width:860px){.ft-grid{grid-template-columns:1fr}}
     .site-footer a{color:rgba(255,255,255,0.85)}
     .art-photo{border-radius:var(--rl);overflow:hidden;box-shadow:0 4px 20px rgba(62,107,138,0.10);margin-bottom:32px}
     .art-photo img{width:100%;height:280px;object-fit:cover;display:block}
@@ -149,7 +157,29 @@
 </div>
 
 <footer class="site-footer">
-  <a href="/">Расцедить.ру</a> · Расцеживание груди в Москве и МО · круглосуточно
+  <div class="ft-grid">
+    <div>
+      <div class="ft-logo">Расцедить.ру</div>
+      <p class="ft-about">Расцеживание груди при лактостазе и мастите, консультации по грудному вскармливанию. Выезд на дом в Москве и МО, онлайн — по всей России.</p>
+    </div>
+    <div class="ft-col">
+      <h5>Контакты</h5>
+      <div>Дежурный специалист: <a href="tel:+79127528520">+7 (912) 752-85-20</a></div>
+      <div><a href="mailto:rascedit@mail.ru">rascedit@mail.ru</a></div>
+      <div>Москва, Рождественка, 5/7с2</div>
+    </div>
+    <div class="ft-col">
+      <h5>Статьи</h5>
+      <div><a href="/laktostaz">Лактостаз</a></div><div><a href="/mastit">Мастит</a></div><div><a href="/laktostaz_i_mastit_otlichiya">Лактостаз или мастит — отличия</a></div><div><a href="/rastsedzhivanie-grudi">Как расцедить грудь</a></div><div><a href="/pochemu-ne-poluchaetsya-rasceditsya">Почему не получается расцедиться</a></div><div><a href="/ekstrennaya-pomosch-pri-laktostaze-i-mastite">Экстренная помощь</a></div><div><a href="/pomoshch-pri-laktostaze">Истории из практики</a></div>
+    </div>
+    <div class="ft-col">
+      <h5>Услуги и сервисы</h5>
+      <div><a href="/konsultatsii-po-grudnomu-vskarmlivaniyu">Консультации по ГВ</a></div><div><a href="/mozhno-li-pri-gv-i-beremennosti">МожноЛи при ГВ и беременности</a></div>
+    </div>
+  </div>
+  <div class="ft-bottom">
+    Реквизиты и номер медицинской лицензии предоставим по запросу
+  </div>
 </footer>
 
 </body>
