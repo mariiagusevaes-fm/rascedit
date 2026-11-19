@@ -127,6 +127,17 @@
     .ft-col a{color:rgba(255,255,255,0.75);text-decoration:none}
     .ft-bottom{max-width:1100px;margin:28px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,0.1);font-size:11px;color:rgba(255,255,255,0.4)}
     @media(max-width:860px){.ft-grid{grid-template-columns:1fr}}
+
+    .contact-modal-overlay{display:none;position:fixed;inset:0;background:rgba(31,46,56,0.55);z-index:1000;align-items:center;justify-content:center;padding:20px}
+    .contact-modal-overlay.active{display:flex}
+    .contact-modal{background:var(--white);border-radius:var(--rl);padding:32px;max-width:380px;width:100%;box-shadow:var(--shadow-lg);position:relative;text-align:center}
+    .contact-modal h3{font-size:20px;margin-bottom:8px}
+    .contact-modal p{font-size:14px;color:var(--muted);margin-bottom:24px}
+    .contact-modal-close{position:absolute;top:14px;right:14px;background:none;border:none;font-size:20px;color:var(--muted);cursor:pointer;line-height:1;padding:4px}
+    .contact-modal-options{display:flex;flex-direction:column;gap:12px}
+    .contact-opt{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:var(--r);text-decoration:none;font-weight:700;font-size:15px;border:1.5px solid var(--brd);color:var(--ink);transition:border-color .15s}
+    .contact-opt:hover{border-color:var(--blue)}
+    .contact-opt-ic{font-size:22px;flex-shrink:0}
   </style>
 <script type="text/javascript">
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -240,7 +251,7 @@
       <div class="price-row"><div><div class="price-name">Ночной выезд</div><div class="price-sub">21:00 – 9:00</div></div><div class="price-amount">15 500 ₽</div></div>
       <div class="price-row"><div><div class="price-name">Консультация по ГВ</div><div class="price-sub">Прикладывание, трещины, отказ от груди</div></div><div class="price-amount">от 5 000 ₽</div></div>
     </div>
-    <div class="price-cta"><a href="tel:+79127528520" class="btn-red">📞 Оставить заявку</a></div>
+    <div class="price-cta"><a href="#" onclick="openContactModal(event)" class="btn-red">📞 Оставить заявку</a></div>
   </div>
 </section>
 
@@ -309,6 +320,25 @@
     Реквизиты и номер медицинской лицензии предоставим по запросу
   </div>
 </footer>
+
+<div class="contact-modal-overlay" id="contactModal">
+  <div class="contact-modal">
+    <button class="contact-modal-close" onclick="closeContactModal()" aria-label="Закрыть">✕</button>
+    <h3>Как вам удобнее?</h3>
+    <p>Выберите способ связи – ответим как можно скорее.</p>
+    <div class="contact-modal-options">
+      <a href="tel:+79127528520" class="contact-opt"><span class="contact-opt-ic">📞</span>Позвонить</a>
+      <a href="https://wa.me/79120130405?text=Добрый%20день!%20Хочу%20оставить%20заявку%20с%20сайта%20Расцедить.ру" target="_blank" rel="noopener" class="contact-opt"><span class="contact-opt-ic">💬</span>Написать в WhatsApp</a>
+      <a href="https://max.ru/u/f9LHodD0cOJAW0NTK9Tg5C3v_Ldy1TTMXUnQrGsZtug5_XLWcCb8lDuEmTU" target="_blank" rel="noopener" class="contact-opt"><span class="contact-opt-ic">✉️</span>Написать в MAX</a>
+    </div>
+  </div>
+</div>
+<script>
+  function openContactModal(e){if(e)e.preventDefault();document.getElementById('contactModal').classList.add('active');}
+  function closeContactModal(){document.getElementById('contactModal').classList.remove('active');}
+  document.getElementById('contactModal').addEventListener('click',function(e){if(e.target===this)closeContactModal();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeContactModal();});
+</script>
 
 </body>
 </html>
