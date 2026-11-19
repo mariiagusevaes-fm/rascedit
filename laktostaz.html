@@ -34,7 +34,7 @@
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
       --a1:#3E6B8A;--a2:#5486A6;--a3:#8FB3C7;--a4:#D5E6EE;--a5:#EBF3F7;--a6:#F5FAFC;
-      --cta:#D9544A;--cta-d:#B8392F;--cta-l:#FBE6E3;
+      --cta:#6B4C8A;--cta-d:#553C6E;--cta-l:#F0EDF3;
       --white:#FFFFFF;--cream:#F7FAFB;--ink:#1F2E38;--ink2:#35505F;--muted:#6E8A98;
       --brd:#E2ECF1;--brd2:#C9DCE4;--r:16px;--rl:24px;--rsm:10px;
       --blue:var(--a1);--blue-dark:var(--ink2);
@@ -79,6 +79,12 @@
     .faq-q{font-weight:800;font-size:14.5px;margin-bottom:5px}
     .faq-a{font-size:13.5px;color:var(--muted)}
 
+    .faq-item{cursor:pointer}
+    .faq-q{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .faq-q::after{content:'+';font-size:20px;color:var(--blue);flex-shrink:0;transition:transform .2s}
+    .faq-item.open .faq-q::after{content:'–'}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+    .faq-item.open .faq-a{max-height:400px;margin-top:8px}
     .cta-block{background:linear-gradient(135deg,var(--blue) 0%,var(--a2) 100%);border-radius:var(--rl);padding:32px;text-align:center;color:#fff;margin:40px 0}
     .cta-block h3{color:#fff;margin-bottom:10px}
     .btn-white{background:#fff;color:var(--ink2);border:none;border-radius:var(--rsm);padding:14px 28px;font-weight:800;font-size:15px;cursor:pointer;text-decoration:none;display:inline-block;margin-top:8px}
@@ -245,5 +251,12 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click', function(){
+      item.classList.toggle('open');
+    });
+  });
+</script>
 </body>
 </html>
